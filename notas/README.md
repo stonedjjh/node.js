@@ -12,5 +12,6 @@ Indice interno de apuntes tecnicos, guias de comandos, arquitectura y herramient
 - [comandos-node.md](file:///C:/Node.js/notas/comandos-node.md): Chuleta de referencia rapida con comandos esenciales de Node.js y npm.
 
 ### Fundamentos y Teoria
+- [event-loop-fases-y-reglas.md](file:///C:/Node.js/notas/event-loop-fases-y-reglas.md): Las 9 reglas de oro del Event Loop, colas de microtasks (nextTick vs Promises), macrotasks y orden de ejecucion.
 - [bloqueante-vs-no-bloqueante.md](file:///C:/Node.js/notas/bloqueante-vs-no-bloqueante.md): Analisis tecnico de I/O bloqueante (Sync) vs no bloqueante (Async), Event Loop, libuv y riesgos de mezcla de patrones.
 - [apuntes-generales.md](file:///C:/Node.js/notas/apuntes-generales.md): Conceptos teoricos del motor V8, Event Loop y asincronia.
