@@ -13,8 +13,10 @@ Este repositorio contiene mis notas de estudio, resumenes conceptuales, hojas de
 
 El contenido teorico, la progresion didactica y los laboratorios integrados en este repositorio provienen de las siguientes fuentes de formacion:
 
-1. **IBM Developer Skills Network / Coursera**: *Desarrollo de aplicaciones back-end con Node.js y Express*.
-2. **KeepCoding**: *Curso de Fundamentos y Desarrollo en Node.js*.
+1. **Fernando Herrera**: *NodeJS: De cero a experto* (Udemy).
+2. **IBM Developer Skills Network / Coursera**: *Desarrollo de aplicaciones back-end con Node.js y Express*.
+3. **KeepCoding**: *Curso de Fundamentos y Desarrollo en Node.js*.
+4. **Builder.io**: Articulos tecnicos y guias visuales sobre la arquitectura interna de Node.js.
 
 Todo el reconocimiento y credito respecto a la estructura academica y material original pertenece a sus respectivos autores e instituciones.
 
@@ -25,20 +27,19 @@ Todo el reconocimiento y credito respecto a la estructura academica y material o
 El proyecto esta organizado de forma modular segun la naturaleza de cada recurso:
 
 ### Cursos y Formaciones
-- [cursos/IBM/desarrollo-backend-express](file:///C:/Node.js/cursos/IBM/desarrollo-backend-express): Modulos 1 al 3 del curso de IBM, abarcando creacion de servidores HTTP, asincronia (Callbacks, Promesas, Async/Await), Express, enrutamiento, middlewares y laboratorios CRUD con autenticacion.
-- [cursos/keepcoding/fundamentos-node](file:///C:/Node.js/cursos/keepcoding/fundamentos-node): Ejercicios y fundamentos de JavaScript en servidor, closures, prototipos, EventEmitters, control de flujo asincrono y aplicaciones base con Express.
+- [cursos/IBM/desarrollo-backend-express](./cursos/IBM/desarrollo-backend-express): Modulos 1 al 3 del curso de IBM, abarcando creacion de servidores HTTP, asincronia (Callbacks, Promesas, Async/Await), Express, enrutamiento, middlewares y laboratorios CRUD con autenticacion.
+- [cursos/keepcoding/fundamentos-node](./cursos/keepcoding/fundamentos-node): Ejercicios y fundamentos de JavaScript en servidor, closures, prototipos, EventEmitters, control de flujo asincrono y aplicaciones base con Express.
 
 ### Notas y Referencias
-- [notas/comandos-node.md](file:///C:/Node.js/notas/comandos-node.md): Guia de referencia rapida de comandos de terminal de Node.js y npm.
-- [notas/apuntes-generales.md](file:///C:/Node.js/notas/apuntes-generales.md): Notas teoricas, conceptos clave y arquitectura en tiempo de ejecucion de Node.js.
+- [notas/](./notas): Indice modular con guias sobre el Event Loop, I/O bloqueante vs no bloqueante, PNPM y seguridad, NVM y comandos esenciales.
 
 ### Carpetas Tematicas de Especializacion
-- [ejercicios/](file:///C:/Node.js/ejercicios): Pequeños scripts, katas y pruebas de sintaxis aisladas.
-- [laboratorios/](file:///C:/Node.js/laboratorios): Proyectos guiados, microservicios y practicas paso a paso.
-- [librerias/](file:///C:/Node.js/librerias): Pruebas, apuntes y casos de uso con paquetes npm de utilidad (ej. Lodash, Chance, Axios, Dayjs).
-- [frameworks/](file:///C:/Node.js/frameworks): Ejemplos y arquitecturas orientadas a frameworks del ecosistema (Express, Fastify, NestJS).
-- [utilidades/](file:///C:/Node.js/utilidades): Helpers, scripts de automatizacion y herramientas de soporte.
-- [certificados/](file:///C:/Node.js/certificados): Archivos y comprobantes digitales de certificaciones obtenidas.
+- [ejercicios/](./ejercicios): Scripts, katas y practicas organizadas por autor o curso (ej. `ejercicios/fernando-herrera/`).
+- [laboratorios/](./laboratorios): Proyectos guiados, microservicios y practicas paso a paso.
+- [librerias/](./librerias): Pruebas, apuntes y casos de uso con paquetes npm de utilidad (ej. Lodash, Chance, Axios, Dayjs).
+- [frameworks/](./frameworks): Ejemplos y arquitecturas orientadas a frameworks del ecosistema (Express, Fastify, NestJS).
+- [utilidades/](./utilidades): Helpers, scripts de automatizacion y herramientas de soporte.
+- [certificados/](./certificados): Archivos y comprobantes digitales de certificaciones obtenidas.
 
 ---
 
@@ -47,23 +48,24 @@ El proyecto esta organizado de forma modular segun la naturaleza de cada recurso
 Para ejecutar los ejemplos y laboratorios contenidos en este repositorio se requiere:
 
 - **Node.js**: Version 18.x LTS o superior (recomendado 20.x o superior).
-- **npm**: Gestor de paquetes incluido con la instalacion de Node.js.
+- **npm** o **pnpm**: Gestores de paquetes para el ecosistema Node.js.
 - **Git**: Para el control de versiones local.
 
 Para verificar tus versiones instaladas:
 ```bash
 node -v
 npm -v
+pnpm -v
 ```
 
 ---
 
 ## Certificacion y Logros
 
-Las certificaciones, diplomas y acreditaciones obtenidas a lo largo de las distintas rutas de aprendizaje se archivaran en la carpeta [certificados/](file:///C:/Node.js/certificados).
+Las certificaciones, diplomas y acreditaciones obtenidas a lo largo de las distintas rutas de aprendizaje se archivaran en la carpeta [certificados/](./certificados).
 
 ---
 
 ## Licencia
 
-Este repositorio se distribuye bajo la licencia **MIT**. Consulte el archivo [LICENSE](file:///C:/Node.js/LICENSE) para mas detalles.
+Este repositorio se distribuye bajo la licencia **MIT**. Consulte el archivo [LICENSE](./LICENSE) para mas detalles.
