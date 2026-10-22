@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="stylesheets/style.css" />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+    <%= parrafo %> Este es el parrafo saneado</br> 
+    <%- parrafo %> Este es el parrafo sin sanear
+    El estado es: <%= condicion.estado() %>
+    <script>
+    console.log(<%= condicion.valor % 2 == 0 ? true : false %>);
+    </script>
+    <!-- como estado es una funcion la llamamos con parentesis si no usamos parantesis devuelve la funcion y no la 
+     ejecucion de la misma -->
+
+     <!-- ejemplo de operador ternario -->
+     <p>El valor <%= condicion.valor %> es <%= condicion.estado()? "par": "impar" %> </p>
+
+      <!-- ejemplo de if else -->
+    <% if (condicion.estado()) { %>
+      <p>El valor <%= condicion.valor %> es par</p>
+    <% } else { %>
+      <p>El valor <%= condicion.valor %> es impar</p>
+    <% } %>
+
+    <h2>Lista de Usuarios</h2>
+    <ul>
+      <% users.forEach(function(user) { %>
+        <li><%= user.name %></li>
+      <% }); %>
+  </body>
+</html>
