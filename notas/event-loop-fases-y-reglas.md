@@ -1,6 +1,9 @@
 # El Event Loop en Node.js: Fases, Colas y Reglas de Ejecucion
 
-> Basado en la arquitectura interna de `libuv` y el ciclo de vida de ejecucion asincrona en Node.js.
+> **Fuentes y Reconocimiento:**
+> - Curso: *NodeJS: De cero a experto* impartido por **Fernando Herrera** (Udemy).
+> - Articulo y guia visual de arquitectura: [A Visual Guide to NodeJS Event Loop - Builder.io](https://www.builder.io/blog/visual-guide-to-nodejs-event-loop).
+> - Documentacion oficial de `libuv` y Node.js.
 
 ---
 
@@ -74,3 +77,40 @@ Primer Timeout  <-- (3 segundos despues)
 
 ### ¿Por que los `setTimeout(..., 0)` no se ejecutan antes de 'Fin de programa'?
 Porque el codigo sincronico que corre en el hilo principal (Call Stack) **nunca puede ser interrumpido a mitad de camino**. Hasta que el archivo principal no termina de evaluarse por completo y el Call Stack queda en cero, el Event Loop no da su primera vuelta para vaciar el `timer queue`.
+
+---
+
+## 4. Preguntas Claves de Arquitectura (Call Stack vs libuv)
+
+### Pregunta 1
+> **¿En que momento decide Node ejecutar la funcion callback asociada en la pila de llamadas (callstack)?**  
+> **Respuesta:**  
+> Los callbacks son ejecutados **unicamente cuando el callstack esta completamente vacio**.
+
+---
+
+### Pregunta 2
+> **¿Node espera a que la pila de llamadas este vacia antes de ejecutar un callback o interrumpe el flujo normal de ejecucion para ejecutar el callback?**  
+> **Respuesta:**  
+> **El flujo normal de ejecucion no se interrumpira para ejecutar una funcion de devolucion de llamada (callback).**
+
+---
+
+### Pregunta 3
+> **¿Que pasa con otros metodos asincronos como setTimeout y setInterval, que tambien retrasan la ejecucion de un callback?**  
+> **Respuesta:**  
+> **Los callbacks de setTimeout y setInterval tienen prioridad (dentro de las fases de macrotasks del Event Loop), pero NO interrumpen el flujo normal de ejecucion.**
+
+---
+
+### Pregunta 4
+> **Si dos tareas asincronas como setTimeout y readFile se completan al mismo tiempo, ¿como decide Node que callback ejecutar primero en la pila de llamadas? ¿Uno tiene prioridad sobre el otro?**  
+> **Respuesta:**  
+> **Los callbacks de temporizador (Timer Queue) se ejecutan antes que las devoluciones de llamada de I/O (I/O Queue), incluso si ambas estan listas exactamente al mismo tiempo.**
+
+### Implicacion Tecnica:
+En el Event Loop de `libuv`, el orden de las fases es determinista y estricto: la fase de **Timers** precede siempre a la fase de **I/O Polling / Callbacks**. Por tanto, aunque el sistema operativo haya terminado de leer el archivo en el mismo instante en que el timer expiro, Node siempre procesara primero los timers listos antes de avanzar a vaciar la cola de I/O.
+
+
+
+
