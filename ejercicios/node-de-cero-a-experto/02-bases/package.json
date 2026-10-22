@@ -1,0 +1,24 @@
+{
+  "name": "02-bases",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon src/app.js",
+    "start": "node src/app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "^11.1.3",
+      "onFail": "download"
+    }
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
